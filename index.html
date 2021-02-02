@@ -4,25 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
     <link rel="stylesheet" href="./style.css"></link>
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Homemade+Apple&display=swap" rel="stylesheet">
-    <title>Static Template</title>
+    <script src= "https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src= "https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <body>
+   
   </head>
   <body>
-    <div class="container">
+    <!-- sebagai tempat untuk react component berada -->
+    <div id="root"/>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        render() {
+          return(
+            <div class="container">
       <div class="frame">
         <section class="header">
             <button class="header-btn main-black-color">Add</button>
             <h1 class="header-title">Todo List</h1>
             <button class="header-btn main-red-color">Clear</button>
         </section>
-
         <section class="add">
           <form class="add-form">
-            <input type="text" class="add-input">
+            <input type="text" class="add-input"></input>
             <button class="add-btn main-black-color">Add</button>
           </form>
         </section>
@@ -45,9 +56,14 @@
                   <div class="todo">
                       <span class="todo-text">Learning React</span>
                     </div>
-
-        </section>
+          </section>
+        </div>
       </div>
-    </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
   </body>
 </html>
